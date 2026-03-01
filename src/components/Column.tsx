@@ -1,12 +1,20 @@
-
+import type { Props } from '../models';
 import { useStyles } from '../styles/useStyles';
 import TaskItem from './TaskItem';
 
-export default function Column() {
+export default function Column({title, status, tasks}: Props) {
         const classes = useStyles();
+        const filteredTasks = tasks.filter(
+            (t) => t.status === status
+        )
   return (
     <div className={classes.column}>
-        <TaskItem task={{title: 'Task 1', description: 'Description for Task 1', date: '2024-06-01', status: 'In Progress'}} />
+        <div className={classes.columnHeader}>
+            <h3 style={{margin: '0', textAlign: 'center'}}>{title}</h3>
+        </div>
+        {filteredTasks.map(task => (
+            <TaskItem key={task.id} task={task} />
+        ))}
     </div>
   )
 }

@@ -6,9 +6,9 @@ export default function Board() {
     const classes = useStyles();
   return (
     <div className={classes.container}>
-        <Column />
-        <Column />
-        <Column />
+        <Column title="Todo" status="todo" tasks={[]}/>
+        <Column title="In Progress" status="in-progress" tasks={[]}/>
+        <Column title="Done" status="done" tasks={[]}/>
     </div>
   )
 }

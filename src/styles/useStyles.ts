@@ -12,5 +12,10 @@ export const useStyles = createUseStyles({
         minHeight: '300px',
         border: '1px solid #3806ff',
         borderRadius: '15px',
+    },
+    columnHeader: {
+        backgroundColor: '#b99bff',
+        padding: '10px',
+        borderRadius: '15px',
     }
 })
