@@ -20,8 +20,20 @@ export const createTask = async (task: Omit<Task, 'id'>):Promise<Task> => {
     };
 
 export const deleteTask = async (id: number):Promise<void> => {
-    const res = await fetch(`${baseURL}/${id}`, {
+    await fetch(`${baseURL}/${id}`, {
         method: 'DELETE',
     });
-    if(!res.ok) throw new Error('Failed to delete task');
 }
+
+export const updateTask = async(task: Task):Promise<Task> => {
+    const res = await fetch(`${baseURL}/${task.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type' : 'application/json',
+        },
+        body: JSON.stringify(task),
+    });
+    if(!res.ok) throw new Error('Failed to update task');
+    return res.json();
+    }
+        

@@ -1,6 +1,9 @@
 
+import { useMutation } from "@tanstack/react-query";
 import type { Task } from "../models";
 import { useStyles } from "../styles/useStyles";
+import { queryClient } from "../main";
+import { deleteTask } from "../libs/taskApi";
 
 interface Props {
     task: Task;
@@ -8,6 +11,10 @@ interface Props {
 
 export default function TaskItem({task}: Props) {
     const classes = useStyles();
+    const deleteMutation = useMutation({
+      mutationFn : deleteTask,
+      onSuccess: () => queryClient.invalidateQueries({queryKey: ['tasks']}),
+    });
   return (
     <div className={classes.taskItem}>
         <h3 className={classes.taskTitle}>{task.title}</h3>
@@ -15,7 +22,9 @@ export default function TaskItem({task}: Props) {
         <div className={classes.taskDate}>{task.date}</div>
         <span className={classes.taskStatus}>{task.status}</span>
         <div className={classes.actions}>
-          <button style={{backgroundColor: 'red', color: 'white', padding: '5px 10px', borderRadius: '5px', cursor: 'pointer'}}>Delete</button>
+          <button 
+          style={{backgroundColor: 'red', color: 'white', padding: '5px 10px', borderRadius: '5px', cursor: 'pointer'}}
+          onClick={() => deleteMutation.mutate(task.id)}>Delete</button>
           <button style={{backgroundColor: 'yellow', padding: '5px 10px', borderRadius: '5px', cursor: 'pointer'}}>Edit</button>
         </div>
     </div>
