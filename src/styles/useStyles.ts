@@ -52,5 +52,5 @@ export const useStyles = createUseStyles({
         gap: '10px',
         padding: '20px',
         margin: '20px',
-    }
+    },
 })
