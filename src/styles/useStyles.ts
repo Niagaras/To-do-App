@@ -17,5 +17,33 @@ export const useStyles = createUseStyles({
         backgroundColor: '#b99bff',
         padding: '10px',
         borderRadius: '15px',
-    }
+    },
+    taskItem: {
+        border: '2px solid #0095ff',
+        borderRadius: '10px',
+        padding: '10px',
+        marginTop: '10px',
+        backgroundColor: '#e6fbff',
+    },
+    taskTitle: {
+        fontWeight: 'bold',
+        marginBottom: '5px',
+        textTransform: 'capitalize',
+    },
+    taskDate: { 
+        fontSize: '12px', 
+        color: '#888', 
+        marginBottom: '8px' 
+    },
+      taskDesc: { 
+        fontSize: '14px', 
+        color: '#555', 
+        marginBottom: '10px' 
+    },
+      actions: { 
+        display: 'flex', 
+        justifyContent: 'flex-end', 
+        gap: '10px', 
+        marginTop: '10px' 
+    },
 })
