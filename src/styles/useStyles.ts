@@ -53,4 +53,12 @@ export const useStyles = createUseStyles({
         padding: '20px',
         margin: '20px',
     },
+        taskStatus: {
+        padding: '4px 8px',
+        borderRadius: '5px',
+        border: '2px solid #ffffff',
+        fontSize: '10px',
+        backgroundColor: '#a5f1ff',
+        fontWeight: 'bold',
+    }
 })
