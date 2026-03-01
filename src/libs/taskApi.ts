@@ -8,3 +8,13 @@ export const fetchTasks = async (): Promise<Task[]> => {
     return res.json();
 }
 
+export const createTask = async (task: Omit<Task, 'id'>):Promise<Task> => {
+    const res = await fetch(baseURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },'body': JSON.stringify(task),
+    });
+    if(!res.ok) throw new Error('Failed to create task');
+    return res.json();
+    };
