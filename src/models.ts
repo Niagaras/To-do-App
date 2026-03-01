@@ -7,3 +7,9 @@ export interface Task {
     status: TaskStatus;
     date?: string;
 }
+
+export interface Props{
+    title: string;
+    status: TaskStatus;
+    tasks: Task[];
+}
