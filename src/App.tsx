@@ -3,9 +3,9 @@ import './App.css'
 function App() {
 
   return (
-    <>
-
-    </>
+   <div>
+    <h1 style={{textAlign: 'center'}}>My Todo App</h1>
+   </div>
   )
 }
 
