@@ -1,0 +1,25 @@
+{
+    "tasks":[
+        {
+            "id": 1,
+            "title": "buy a new laptop",
+            "description": "Description for Task 1",
+            "status": "todo",
+            "date": "2024-06-01"
+        },
+        {
+            "id": 2,
+            "title": "implement a new feature",
+            "description": "Description for Task 2",
+            "status": "in-progress",
+            "date": "2024-06-02"
+        },
+        {
+            "id": 3,
+            "title": "deploy the app",
+            "description": "Description for Task 3",
+            "status": "done",
+            "date": "2024-06-03"
+        }
+    ]
+}
