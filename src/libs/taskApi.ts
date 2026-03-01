@@ -18,3 +18,10 @@ export const createTask = async (task: Omit<Task, 'id'>):Promise<Task> => {
     if(!res.ok) throw new Error('Failed to create task');
     return res.json();
     };
+
+export const deleteTask = async (id: number):Promise<void> => {
+    const res = await fetch(`${baseURL}/${id}`, {
+        method: 'DELETE',
+    });
+    if(!res.ok) throw new Error('Failed to delete task');
+}
