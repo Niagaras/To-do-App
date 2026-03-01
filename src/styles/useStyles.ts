@@ -46,4 +46,11 @@ export const useStyles = createUseStyles({
         gap: '10px', 
         marginTop: '10px' 
     },
+    taskForm: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        padding: '20px',
+        margin: '20px',
+    }
 })
