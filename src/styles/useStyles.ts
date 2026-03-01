@@ -61,6 +61,9 @@ export const useStyles = createUseStyles({
         backgroundColor: '#a5f1ff',
         fontWeight: 'bold',
     },
-
+    scrollable:{
+        maxHeight: '600px',
+        overflowY: 'auto',
+    }
 
 })
