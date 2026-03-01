@@ -12,9 +12,11 @@ export default function Column({title, status, tasks}: Props) {
         <div className={classes.columnHeader}>
             <h3 style={{margin: '0', textAlign: 'center'}}>{title}</h3>
         </div>
+        <div className={classes.scrollable}>
         {filteredTasks.map(task => (
             <TaskItem key={task.id} task={task} />
-        ))}
+        ))}            
+        </div>
     </div>
   )
 }

@@ -13,3 +13,7 @@ export interface Props{
     status: TaskStatus;
     tasks: Task[];
 }
+
+export interface EditState{
+    editingTask: Task | null;
+}

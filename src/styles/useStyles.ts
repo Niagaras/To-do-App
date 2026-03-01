@@ -60,5 +60,7 @@ export const useStyles = createUseStyles({
         fontSize: '10px',
         backgroundColor: '#a5f1ff',
         fontWeight: 'bold',
-    }
+    },
+
+
 })
