@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import type { Task } from "../models";
 import { useStyles } from "../styles/useStyles";
 import { queryClient } from "../main";
-import { deleteTask, updateTask } from "../libs/taskApi";
+import { deleteTask } from "../libs/taskApi";
 import { useDispatch } from "react-redux";
 import { setEditingTask } from "../features/editSlice";
 
@@ -17,13 +17,6 @@ export default function TaskItem({task}: Props) {
     const deleteMutation = useMutation({
       mutationFn : deleteTask,
       onSuccess: () => queryClient.invalidateQueries({queryKey: ['tasks']}),
-    });
-
-    const editMutation = useMutation({
-      mutationFn : updateTask,
-      onSuccess: () => queryClient.invalidateQueries({
-        queryKey: ['tasks']
-      })
     });
 
     const dispatch = useDispatch();

@@ -1,5 +1,4 @@
-import { configureStore, createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { Task } from "./models";
+import { configureStore } from "@reduxjs/toolkit";
 import editingTaskReducer from "./features/editSlice";
 
 export const store = configureStore({
